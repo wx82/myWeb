@@ -1,0 +1,2 @@
+alert("aaa")
+alert("bbb")

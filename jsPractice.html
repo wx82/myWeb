@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM练习</title>
+</head>
+<body>
+    <div id="time">2020-4-18</div>
+    <ul id="nav">
+        <li>周四</li>
+        <li>周六</li>
+        <li>周日</li>
+    </ul>
+    <div class="box">盒子1</div>
+    <div class="box">盒子2</div>
+    <script>
+        //禁止右键菜单
+        document.addEventListener('contextmenu',function(e){
+            e.preventDefault();
+        })
+        //禁止鼠标选中
+        document.addEventListener('selectstart',function(e){
+            e.preventDefault();
+        })
+        //文档页面从上向下加载，所以script必须写在标签下面
+        //1、getElementById() 通过id名获取元素
+        var timer = document.getElementById('time');
+        console.dir(timer);//打印返回的元素对象，更好的查看里面的属性和方法
+
+        //2、getElementsByTagName() 根据标签名获取  得到的是对象的集合
+        var lis = document.getElementsByTagName('li');
+        console.log(lis[0]);
+
+        //3、element.getElementsByTagName()可以得到这个元素里面的某些标签
+        var nav = document.getElementById('nav');
+        var lis2 = nav.getElementsByTagName('li');
+
+        //以下是H5新增方法
+        //4、getElementsClassTagName() 根据类名选元素的集合
+        var boxs = document.getElementsByClassName('box');
+
+        //5、querySelector() 返回指定选择器的第一个元素对象,选择器里面必须要加符号
+        var firstBox = document.querySelector('.box');
+        var time2 = document.querySelector('#time');
+        var li1 = document.querySelector('li');
+
+        //6、querySelectorAll()返回指定选择器的所有元素
+        var boxs2 = document.querySelectorAll('.box');
+        box2.onclick = function(e){
+            console.log(e)
+        }
+        //--------------------------
+        //获取body标签
+        var bodyEle = document.body;
+
+        //获取html元素
+        var htmlEle = document.documentElement;
+        
+    </script>
+</body>
+</html>

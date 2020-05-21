@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>搜索快捷键</title>
+    <style>
+        .con{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- 搜索框 -->
+    搜索
+    <input type="text">
+
+    <!-- 输入显示大字 -->
+    <div class="search">
+        <div class="con">123</div>
+        <input type="text" placeholder="请输入您的快递单号" class="jd">
+    </div>
+    <script>
+        //按下键盘s 相当去鼠标点击搜索框
+        var search = document.querySelector('input');
+        document.addEventListener('keyup',function(e){
+            //s的keycode为83
+            if(e.keyCode === 83 ){
+                search.focus();
+            }
+        })
+        //--------------------------------------
+        var con = document.querySelector('.con');
+        var jd_input = document.querySelector('.jd');
+        jd_input.addEventListener('keyup',function(e){
+            if(this.value == ''){
+                con.style.display = "none";
+            }else{
+                con.style.display = 'block';
+                con.innerHTML = this.value;
+            } 
+        })
+        //失去焦点，隐藏con盒子
+        jd_input.addEventListener('blur',function (e) {
+            con.style.display = 'none';
+        })
+        //获得焦点，显示盒子
+        jd_input.addEventListener('focus',function (e) {
+            if(jd_input.value != ''){
+                con.style.display = 'block';
+            }  
+        })
+        //窗口加载事件
+        window.onload = function(){}
+        window.addEventListener('load',function(){})
+
+        document.addEventListener('DOMContentLoaded',function(){})
+        //调整窗口大小事件
+        window.onresize = function () {  }
+        window.addEventListener('resize',function () {  });
+
+        //定时器
+        var time1 = setTimeout(fun,2000);
+    </script>
+</body>
+</html>

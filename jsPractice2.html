@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件</title>
+    <style>
+        .psw{
+            width: 400px;
+            border-bottom:1px solid rebeccapurple;
+            margin: 100px auto;
+        }
+        .psw input{
+            width: 370px;
+            height: 30px;
+            border: 0;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">点我</button>
+    <button id="btn2">显示当前时间</button>
+    <div class="psw">
+        <label for=""></label>
+        <input type="password" name="" id="pwd">
+    </div>
+    
+    <div>某个时间</div>
+    <script>
+        //事件由三部分组成：事件源，事件类型，事件处理程序
+        //事件源 事件除法的对象
+        var btn = document.getElementById('btn');
+        //事件类型(如何触发) 如鼠标点击(onclick)，鼠标经过，键盘按下
+        //事件处理程序 通过一个函数赋值的方式完成
+        btn.onclick = function() {
+            alert('hhhhh');
+        }
+
+        //改变元素内容
+        //1、element.innerText 从起始位置到终止位置，但它去除html标签，即不识别html标签，同时空格和换行也会去掉
+        //2、element.innerHTML 起始位置到终止位置的全部内容，包括html标签，同时保留空格和换行(!W3C标准！)
+        var btn2 = document.querySelector('#btn2');
+        var div = document.querySelector('div');
+        btn2.onclick = function(){
+            div.innerText = "2020-4-18";
+        }
+        div.innerHTML('<strong>2020-4-18</strong>');
+        
+        //改变元素属性
+        元素.属性 = '';
+
+        //修改表单元素属性
+        //表单里面的值通过value来修改
+        //如果想要某个表单被禁用不能再点击,其按钮禁用
+        btn.disabled = true;
+    </script>
+</body>
+</html>
