@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="txt"></div>
+    <script>
+        params = location.search;//?uname=名字&password=
+        //1、去掉？
+        var params1 = params.substr(1);
+        //2、利用&和=分割为数组
+        var arr = params1.split('&');
+        var arr1 = arr[0].split('=');
+        var name = arr1[1];
+        console.log(name);
+        var div = document.querySelector('.txt');
+        div.innerHTML = name+"欢迎您！";
+    </script>
+</body>
+</html>
