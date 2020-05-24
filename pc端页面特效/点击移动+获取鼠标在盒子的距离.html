@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color:rosybrown;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+        var box = document.querySelector(".box");
+        box.addEventListener('mousedown',function(e){
+            //console.log(e.pageX);//鼠标距离页面左侧的长度
+            //console.log(e.pageY);//鼠标距离页面上侧的距离
+            //console.log(this.offsetLeft);//盒子距离页面左侧的距离
+            var x = e.pageX-this.offsetLeft;//鼠标在盒子内的x位置
+            var y = e.pageY-this.offsetTop;//鼠标在盒子内的y位置
+            //console.log(x);
+            //console.log(y);
+            var move=function(e){
+                box.style.left = e.pageX-x + 'px';
+                box.style.top = e.pageY - y +'px';
+            }
+            document.addEventListener('mousemove',move)
+            document.addEventListener('mouseup',function () {
+                document.removeEventListener('mousemove',move);
+            })
+        })
+        
+    </script>
+</body>
+</html>

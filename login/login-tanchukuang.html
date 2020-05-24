@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>主页</title>
+    <style>
+        .container{
+            display: none; 
+        }
+        .close{
+            height: 10px;
+            text-align: right;
+            line-height: 10px;
+        }
+        .close-login{
+            color: cadetblue;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-header"><a id="link" href="javascript:;">登录</a></div>
+    <div class="container">
+        
+        <form action="index.html" class="loginform">
+            <span class="close"><a id="closebtn" href="javascript:void(0);" class="close-login">x</a></span>
+            <h2>登录</h2>
+            
+            <input type="text" name="username" placeholder="用户名">
+            <input type="text" name="password" placeholder="密码">
+            <button type="submit">登录</button>
+        </form>
+    </div>
+    <script>
+        var loginbtn = document.querySelector('.login-header');
+        var login = document.querySelector('.container');
+        var link = document.querySelector('#link');
+        var close = document.querySelector('.close');
+        link.addEventListener('click',function(){
+            login.style.display = 'flex';
+        })
+        close.addEventListener('click',function () {
+            login.style.display = 'none';
+          })
+        
+    </script>
+</body>
+</html>
